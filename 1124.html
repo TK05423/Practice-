@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css " href="style.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-around; /* evenly distribute buttons horizontally */
+      align-items: center;
+      height: 50px;
+      background-color: #333; /* Background color for the button container */
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      transform: scale(1.1); /* Scales up the button on hover */
+    }
+
+    /* Button Colors */
+    .button.blue { background-color: #3498db; }
+    .button.green { background-color: #2ecc71; }
+    .button.orange { background-color: #e67e22; }
+    .button.purple { background-color: #9b59b6; }
+    .button.gray { background-color: gray; }
+  </style>
 </head>
 <body>
-    <h1>This is a heading</h1>
-    <em>Go to the</em> grocery Store
-    <p>This is a paragraph</p>
+
+<a href="#" class="button blue" onclick="showAlert('Button 1')">Button 1</a>
+<a href="#" class="button green" onclick="showAlert('Button 2')">Button 2</a>
+<a href="#" class="button orange" onclick="changeColor('Button 3')">Button 3</a>
+<a href="#" class="button purple" onclick="changeColor('Button 4')">Button 4</a>
+<a href="#" class="button gray" onclick="changeColor('Reset')" "showAlert('Reset color')">Reset</a>
+
+<script>
+  function showAlert(buttonText) {
+    alert('You clicked ' + buttonText);
+  }
+
+  function changeColor(buttonText) {
+    if (buttonText === 'Button 3') {
+      document.body.style.backgroundColor = '#e67e22'; // Change background color for Button 3
+    } else if (buttonText === 'Button 4') {
+      document.body.style.backgroundColor = '#9b59b6'; // Change background color for Button 4
+    } else if (buttonText === 'Reset'){
+      document.body.style.backgroundColor = '#fdfdfd';   
+    }
+  }
+</script>
+
 </body>
 </html>
